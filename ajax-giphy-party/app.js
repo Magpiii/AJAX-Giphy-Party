@@ -6,16 +6,20 @@ async function getImage(query) {
     return res;
 }
 
-function makeImage(url) {
+function placeImage(url) {
     // Source (https://stackoverflow.com/questions/8013792/how-to-create-a-new-img-tag-with-jquery-with-the-src-and-id-from-a-javascript-o, accessed 12 May 2022)
-    const $img = $(`<img src="${url}" alt="">`); 
+    const $img = $(`<img src="${url}" alt="">`);
+    
+    $('#gifs').append($img);
 }
 
 $('#search-button').click(function(e) {
     e.preventDefault(); 
     let $query = $('#search').val();
-    let data = getImage($query);
+    let result = getImage($query);
 
-    console.log(data);
+    console.log(result);
+    console.log(result.data[0].url); 
+    // placeImage(result.data[0].id); 
 });
 
