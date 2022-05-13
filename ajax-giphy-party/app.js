@@ -13,13 +13,13 @@ function placeImage(url) {
     $('#gifs').append($img);
 }
 
-$('#search-button').click(function(e) {
+$('#search-button').click(async function(e) {
     e.preventDefault(); 
     let $query = $('#search').val();
-    let result = getImage($query);
+    let result = await getImage($query);
 
     console.log(result);
-    console.log(result.data[0].url); 
-    // placeImage(result.data[0].id); 
+    console.log(result.data.data[0].url);
+    placeImage(result.data.data[0].images.fixed_height_small.url);
 });
 
