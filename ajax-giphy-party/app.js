@@ -23,6 +23,7 @@ $('#search-button').click(async function(e) {
     placeImage(result.data.data[0].images.fixed_height_small.url);
 });
 
+// Source: https://www.w3schools.com/jquery/html_empty.asp#:~:text=The%20empty()%20method%20removes,use%20the%20detach()%20method., accessed 13 May 2022)
 $('#remove').click(function() {
     $('#gifs').clear();
 }); 
