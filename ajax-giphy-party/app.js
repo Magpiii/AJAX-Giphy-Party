@@ -23,3 +23,7 @@ $('#search-button').click(async function(e) {
     placeImage(result.data.data[0].images.fixed_height_small.url);
 });
 
+$('#remove').click(function() {
+    $('#gifs').clear();
+}); 
+
